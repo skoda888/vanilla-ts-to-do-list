@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Calibri';
+}
+
+h1 {
+    color: rgb(37, 36, 41);
+    font-size: 2.8rem;
+}
+
+.typescript-span {
+    color:rgb(74, 137, 255);
+}
+
+.to-do-list-card {
+    width: 25vw;
+    padding-bottom: 2vh;
+    background-color: #fdfdfd; 
+    box-shadow: 0px 0px 3px 3px #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.to-do-list-card-heading {
+    font-size: 2rem;
+}
+
+.to-do-list-card-form {
+    width: 80%;
+    height: 12%;
+    display: flex;
+}
+
+.to-do-list-card-form input {
+    width: 100%;
+}
+
+.to-do-list-card-form button {
+    width: 15%;
+    margin-left: 0.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(74, 137, 255);
+    font-size: 1.8rem;
+    color: white;
+}
+
+.to-do-list-card-list {
+    list-style: none;
+    align-self: flex-start;
+    width: 81.5%;
+}
+
+.to-do-list-card-list li {
+    width: 100%;
+}
+
+.to-do-list-card-list-item-container {
+    display: flex;
+    align-items: center;
+    padding: 0 1.2vw;
+    background-color: rgb(74, 137, 255);
+    color: white;
+    margin-left: 0.4vw;
+    margin-top: 0.75rem;
+}
+
+.to-do-list-card-list-item-container input {
+    outline: none;
+    border: none;
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+}
+
+to-do-list-card-list-item-container span {
+    color: white;
+}
