@@ -22,7 +22,10 @@ function loadTasks(): void {
             <li class ="to-do-list-card-list-item">
                 <article class="to-do-list-card-list-item-container">
                     <p>${task.title}</p>
-                    <input type="checkbox">
+                    <div class="to-do-list-card-list-item-container-options">
+                        <input type="checkbox">
+                        <img src="./img/delete.svg" onclick="removeTask()" class="to-do-list-card-list-item-container-remove">
+                    </div>
                 </article>
             </li>
         `
@@ -34,11 +37,22 @@ function submitTask(): void {
         <li class ="to-do-list-card-list-item">
             <article class="to-do-list-card-list-item-container">
                 <p>${inputTask.value}</p>
-                <input type="checkbox">
-                <span>x</span>
+                <div class="to-do-list-card-list-item-container-options">
+                    <input type="checkbox">
+                    <img src="./img/delete.svg" onclick="removeTask()" class="to-do-list-card-list-item-container-remove">
+                </div>
             </article>
         </li>
     `
+}
+
+
+function removeTask(event: Event): void {
+    var todoOptions= this.parentNode;
+    var todoItem = todoOptions.parentNode;
+    var todoLi = todoItem.parentNode;
+    var todoUl = todoLi.parentNode;
+    todoUl.removeChild(todoLi);
 }
 
 window.onload = function() {

@@ -10,11 +10,18 @@ var tasks = Array({
 function loadTasks() {
     for (var _i = 0, tasks_1 = tasks; _i < tasks_1.length; _i++) {
         var task = tasks_1[_i];
-        htmlToDoListCardList.innerHTML += "\n            <li class =\"to-do-list-card-list-item\">\n                <article class=\"to-do-list-card-list-item-container\">\n                    <p>" + task.title + "</p>\n                    <input type=\"checkbox\">\n                </article>\n            </li>\n        ";
+        htmlToDoListCardList.innerHTML += "\n            <li class =\"to-do-list-card-list-item\">\n                <article class=\"to-do-list-card-list-item-container\">\n                    <p>" + task.title + "</p>\n                    <div class=\"to-do-list-card-list-item-container-options\">\n                        <input type=\"checkbox\">\n                        <img src=\"./img/delete.svg\" onclick=\"removeTask()\" class=\"to-do-list-card-list-item-container-remove\">\n                    </div>\n                </article>\n            </li>\n        ";
     }
 }
 function submitTask() {
-    htmlToDoListCardList.innerHTML += "\n        <li class =\"to-do-list-card-list-item\">\n            <article class=\"to-do-list-card-list-item-container\">\n                <p>" + inputTask.value + "</p>\n                <input type=\"checkbox\">\n                <span>x</span>\n            </article>\n        </li>\n    ";
+    htmlToDoListCardList.innerHTML += "\n        <li class =\"to-do-list-card-list-item\">\n            <article class=\"to-do-list-card-list-item-container\">\n                <p>" + inputTask.value + "</p>\n                <div class=\"to-do-list-card-list-item-container-options\">\n                    <input type=\"checkbox\">\n                    <img src=\"./img/delete.svg\" onclick=\"removeTask()\" class=\"to-do-list-card-list-item-container-remove\">\n                </div>\n            </article>\n        </li>\n    ";
+}
+function removeTask(event) {
+    var todoOptions = this.parentNode;
+    var todoItem = todoOptions.parentNode;
+    var todoLi = todoItem.parentNode;
+    var todoUl = todoLi.parentNode;
+    todoUl.removeChild(todoLi);
 }
 window.onload = function () {
     loadTasks();
